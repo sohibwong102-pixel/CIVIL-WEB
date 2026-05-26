@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Accordion from '../components/ui/Accordion.tsx';
+
+const faqItems = [
+  {
+    id: "FAQ_01",
+    title: "[LOREM_MOCK_FAQ_QUESTION_ALPHA]",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    id: "FAQ_02",
+    title: "[LOREM_MOCK_FAQ_QUESTION_BETA]",
+    content: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  {
+    id: "FAQ_03",
+    title: "[LOREM_MOCK_FAQ_QUESTION_GAMMA]",
+    content: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+  },
+  {
+    id: "FAQ_04",
+    title: "[LOREM_MOCK_FAQ_QUESTION_DELTA]",
+    content: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident."
+  }
+];
+---
+
+<Layout title="Frequently Asked Questions" description="Collapsible FAQ list scaffold.">
+  <div class="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto flex-grow">
+    
+    <!-- FAQ PAGE HEADER -->
+    <div class="max-w-xl mx-auto text-center mb-16">
+      <span class="text-[10px] font-mono tracking-widest text-slate-500 uppercase">[RESOLUTIONS]</span>
+      <h1 class="text-2xl sm:text-3xl font-sans font-semibold tracking-tight text-slate-900 dark:text-slate-50 mt-3 mb-4">
+        [FAQ_COLLAPSIBLE_MATRIX]
+      </h1>
+      <p class="text-slate-500 dark:text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm mx-auto">
+        [Dummy description: Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates  repudiandae.]
+      </p>
+    </div>
+
+    <!-- ACCORDION COMPONENT INNER -->
+    <Accordion items={faqItems} client:load />
+
+    <!-- FOOTER HELPER -->
+    <div class="mt-16 text-center border-t border-slate-200/50 dark:border-slate-800/50 pt-10">
+      <p class="text-[10px] font-mono text-slate-400 dark:text-slate-500 max-w-sm mx-auto leading-normal">
+        [MOCK_FAQ_DIRECTIVE: Expand FAQ items inside `/src/pages/faq.astro` to cover specific client onboarding requests.]
+      </p>
+    </div>
+
+  </div>
+</Layout>

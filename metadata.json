@@ -1,0 +1,6 @@
+{
+  "name": "Astro Landing Page Scaffold",
+  "description": "A modular multi-page landing page scaffold built with Astro, Tailwind CSS, and selective React islands.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

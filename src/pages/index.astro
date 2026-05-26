@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/sections/Hero.astro';
+import Feedback from '../components/sections/Feedback.astro';
+import { Layers, Terminal, Smartphone } from 'lucide-react';
+
+const featureCivil = [
+  {
+    title: "Modular Ecosystem",
+    desc: "[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.]",
+    tag: "why modular?",
+    icon: Layers
+  },
+  {
+    title: "Codebase",
+    desc: "[Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.]",
+    tag: "text-editor",
+    icon: Terminal
+  },
+  {
+    title: "Mobile-First",
+    desc: "[Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla.]",
+    tag: "support mobile",
+    icon: Smartphone
+  }
+];
+---
+
+<Layout title="Home" description="An elegant modular multi-page landing page scaffold constructed with Astro and Tailwind CSS.">
+  <!-- HERO HEAD BLOCK -->
+  <Hero />
+
+  <!-- MAIN SUB-GRID CARD GROUP (using spacing over excessive colors) -->
+  <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-[11px] font-mono tracking-widest text-slate-500 uppercase">Core Struktur</span>
+      <h2 class="text-3xl md:text-5xl font-sans font-semibold tracking-tight text-slate-900 dark:text-slate-50 mt-2 mb-4">
+        Highlight LumaSite 
+      </h2>
+      <p class="text-slate-500 dark:text-slate-400 text-xss leading-relaxed max-w-lg mx-auto">
+        Kami selalu mengedepankan kenyamanan, terutama bagi beginner yang baru belajar API
+      </p>
+    </div>
+
+    {/* RESPONSIVE FEATURE LAYOUTS */}
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {featureCivil.map((feat) => {
+        const Icon = feat.icon;
+        return (
+          <div class="p-6 rounded-xl border border-slate-200/60 dark:border-slate-800/60 bg-white/40 dark:bg-slate-950/25 backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5">
+            <div class="flex items-center justify-between mb-4">
+              <span class="p-2 rounded-lg border border-slate-200/60 dark:border-slate-800/60 bg-slate-50/50 dark:bg-slate-900/50 text-slate-700 dark:text-slate-300">
+                <Icon class="w-4 h-4" />
+              </span>
+              <span class="font-mono text-[10px] text-slate-400 dark:text-slate-500 tracking-wide">{feat.tag}</span>
+            </div>
+            <h3 class="text-xss md:text-2xl font-sans font-medium text-slate-900 dark:text-slate-300 mb-2">{feat.title}</h3>
+            <p class="text-slate-500 dark:text-slate-400 font-mono text-[12px] leading-relaxed">{feat.desc}</p>
+          </div>
+        )
+      })}
+    </div>
+  </section>
+
+  <!-- FEEDBACK SUBMIT BLOCK -->
+  <Feedback />
+</Layout>

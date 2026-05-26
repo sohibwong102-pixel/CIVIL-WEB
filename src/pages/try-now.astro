@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Playground from '../components/interactive/Playground.tsx';
+---
+
+<Layout title="Try Now" description="Interactive endpoint playground sandbox scaffold.">
+  <div class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex-grow flex flex-col justify-center">
+    
+    <!-- HEADER INTRO BAR -->
+    <div class="max-w-3xl mx-auto text-center mb-12">
+      <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono tracking-widest bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-500 uppercase">
+        Sandbox Interactive 
+      </span>
+      <h1 class="text-3xl sm:text-3xl md:text-5xl font-sans font-semibold tracking-tight text-slate-900 dark:text-slate-50 mt-4 mb-3">
+        PLAYGROUND
+      </h1>
+      <p class="text-slate-500 dark:text-slate-500 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
+        Coba gratis endpoint secara langsung
+      </p>
+    </div>
+
+    <!-- MAIN INTERACTIVE SANDBOX ISLAND -->
+    <div class="max-w-6xl mx-auto w-full">
+      <Playground client:load />
+    </div>
+
+    <!-- MOCK SYSTEM LEGENDS -->
+    <div class="mt-12 text-center max-w-md mx-auto">
+      <p class="text-[10px] font-mono text-slate-400 dark:text-slate-600 leading-normal">
+        [MOCK_LEGEND: This is a visual code-shape environment. Integrate your server endpoint addresses inside Playground.tsx files during production customization.]
+      </p>
+    </div>
+
+  </div>
+</Layout>

@@ -1,0 +1,127 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Check } from 'lucide-react';
+
+const pricingPlans = [
+  {
+    tier: "BEGINNER",
+    price: "Rp.10,000",
+    period: "/bulan",
+    desc: "Bagi yang baru masuk ke dunia API bisa coba price ini",
+    features: [
+      "10 request/hari",
+      "Akses apikey",
+      "Akses dashboard"
+    ],
+    buttonText: "Coba Mode Beginner ",
+    featured: false
+  },
+  {
+    tier: "BUILDER",
+    price: "Rp.25,000",
+    period: "/bulan",
+    desc: "[Recommended builder placeholder. At vero eos et accusamus et iusto odio dignissimos.]",
+    features: [
+      "[ACCESS_MOCK_FEATURE_01]",
+      "[ACCESS_MOCK_FEATURE_02]",
+      "[ACCESS_MOCK_FEATURE_03_COMPLIANCE]",
+      "[ACCESS_MOCK_FEATURE_04_TUNNELING]",
+      "[ACCESS_MOCK_FEATURE_05_LOGGING]"
+    ],
+    buttonText: "Coba Mode Builder",
+    featured: true
+  },
+  {
+    tier: "OPERATOR",
+    price: "Rp.70,000",
+    period: "/bulan",
+    desc: "[Operational robust enterprise scale. Excepteur sint occaecat cupidatat non proident.]",
+    features: [
+      "[ACCESS_MOCK_FEATURE_01]",
+      "[ACCESS_MOCK_FEATURE_02]",
+      "[ACCESS_MOCK_FEATURE_03_COMPLIANCE]",
+      "[ACCESS_MOCK_FEATURE_04_TUNNELING]",
+      "[ACCESS_MOCK_FEATURE_05_LOGGING]",
+      "[ACCESS_MOCK_FEATURE_06_DEDICATED_VM]"
+    ],
+    buttonText: "Coba Mode Operator",
+    featured: false
+  }
+];
+---
+
+<Layout title="Pricing Plans" description="Transparent subscription model layout scaffold.">
+  <div class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex-grow">
+    
+    <!-- PRICING HEADER -->
+    <div class="max-w-2xl mx-auto text-center mb-16">
+      <span class="text-[10px] font-mono tracking-widest text-slate-500 uppercase">Upgrade PLAN</span>
+      <h1 class="text-6xl sm:text-6xl font-sans font-semibold tracking-tight text-slate-900 dark:text-slate-50 mt-3 mb-4">
+        SUBSCRIPTION
+      </h1>
+      <p class="text-slate-600 dark:text-slate-400 text-xss sm:text-xl max-w-md mx-auto leading-relaxed">
+        Upgrade untuk Akses API yang kamu mau
+    </div>
+
+    <!-- 3 COLUMNS PLANS GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto items-stretch">
+      {pricingPlans.map((plan) => (
+        <div class={`flex flex-col justify-between p-6 rounded-xl border transition-all duration-200 ${
+          plan.featured 
+            ? 'border-slate-900/60 dark:border-slate-100/40 bg-slate-50/70 dark:bg-slate-900/40 shadow-md ring-1 ring-slate-950/5 dark:ring-slate-50/5 -translate-y-1' 
+            : 'border-slate-200/60 dark:border-slate-800/60 bg-white/40 dark:bg-slate-950/20'
+        }`}>
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              {/* PLAN TIER NAME*/}
+              <span class="text-xl font-semibold tracking-wider font-mono text-slate-500 uppercase">{plan.tier}</span>
+              {plan.featured && (
+                <span class="text-[13px] font-mono tracking-wider px-2 py-0.5 rounded bg-slate-900 dark:bg-slate-50 text-slate-50 dark:text-slate-950 font-medium">
+                  Rekomendasi
+                </span>
+              )}
+            </div>
+            {/* HARGA */}
+            <div class="flex items-baseline gap-1 my-4">
+              <span class="text-4xl sm:text-3xl font-sans font-bold text-slate-900 dark:text-slate-50">{plan.price}</span>
+              {/* Periode */}
+              <span class="text-xss font-mono text-slate-500">{plan.period}</span>
+            </div>
+
+            <p class="text-[13px] font-mono leading-relaxed text-slate-500 dark:text-slate-400 mb-6 pb-6 border-b border-slate-200/40 dark:border-slate-800/40">
+              {plan.desc}
+            </p>
+            {/* CHEKLIST LIST */}
+            <ul class="space-y-3 font-mono text-[14px] text-slate-600 dark:text-slate-400 mb-8">
+              {plan.features.map((feat) => (
+                <li class="flex items-start gap-2.5">
+                  <Check class="w-3.5 h-3.5 text-slate-300 dark:text-slate-400 flex-shrink-0 mt-0.5" />
+                  <span>{feat}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+      {/* CTA Price plan */}
+          <a 
+            href="/try-now" 
+            class={`w-full block text-center py-2.5 rounded-lg text-xs font-mono tracking-wider transition-all font-medium border cursor-pointer ${
+              plan.featured
+                ? 'bg-slate-950 dark:bg-slate-50 text-slate-50 dark:text-slate-950 border-slate-950 dark:border-slate-50 hover:bg-slate-800 dark:hover:bg-slate-100'
+                : 'border-slate-200 dark:border-slate-800 text-slate-705 dark:text-slate-300 hover:bg-slate-500 dark:hover:bg-slate-700'
+            }`}
+          >
+            {plan.buttonText}
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <!-- PRICING DISCLOSURE FOOTER -->
+    <div class="mt-16 text-center max-w-md mx-auto">
+      <p class="text-[10px] font-mono text-slate-400 dark:text-slate-600 leading-normal">
+        [MOCK_PRICING_FOOTNOTE: No real financial contracts are defined here. Connect your payment gateways such as Stripe or Paddle within your checkout pipelines.]
+      </p>
+    </div>
+
+  </div>
+</Layout>

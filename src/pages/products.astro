@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Package, Inbox, Layers, Settings, Eye, Globe } from 'lucide-react';
+
+const productScaffolds = [
+  {
+    title: "[PRODUCT_MODULE_ACCELERATE]",
+    desc: "[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.]",
+    status: "[COMING_SOON]",
+    icon: Package
+  },
+  {
+    title: "[PRODUCT_MODULE_STREAMLINE]",
+    desc: "[Sed ut unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.]",
+    status: "[COMING_SOON]",
+    icon: Inbox
+  },
+  {
+    title: "[PRODUCT_MODULE_INTEGRATION]",
+    desc: "[At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas.]",
+    status: "[MAPPED_PROTOTYPE]",
+    icon: Layers
+  },
+  {
+    title: "[PRODUCT_MODULE_DIAGNOSTICS]",
+    desc: "[Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo.]",
+    status: "[MAPPED_PROTOTYPE]",
+    icon: Settings
+  },
+  {
+    title: "[PRODUCT_MODULE_MONITORING]",
+    desc: "[Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae.]",
+    status: "[COMING_SOON]",
+    icon: Eye
+  },
+  {
+    title: "[PRODUCT_MODULE_ROUTING]",
+    desc: "[Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.]",
+    status: "[COMING_SOON]",
+    icon: Globe
+  }
+];
+---
+
+<Layout title="Products Scaffold" description="Clean placeholder coming soon product cards list.">
+  <div class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex-grow">
+    
+    <!-- HEADER -->
+    <div class="max-w-xl mx-auto text-center mb-16">
+      <span class="text-[10px] font-mono tracking-widest text-slate-500 uppercase">[MODULES_PIPELINE]</span>
+      <h1 class="text-2xl sm:text-3xl font-sans font-semibold tracking-tight text-slate-900 dark:text-slate-50 mt-3 mb-4">
+        [PRODUCT_COMMUNICATION_MOCK_GRID]
+      </h1>
+      <p class="text-slate-500 dark:text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm mx-auto">
+        [Dummy description: Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam.]
+      </p>
+    </div>
+
+    <!-- MAIN CARDS LIST CONTAINER -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      {productScaffolds.map((item) => {
+        const IconComponent = item.icon;
+        return (
+          <div class="flex flex-col justify-between p-6 rounded-xl border border-slate-200/60 dark:border-slate-800/60 bg-white/40 dark:bg-slate-950/25 backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="p-2 rounded border border-slate-200/50 dark:border-slate-800/50 bg-slate-50/50 dark:bg-slate-900/50 text-slate-700 dark:text-slate-300">
+                  <IconComponent class="w-4 h-4" />
+                </span>
+                
+                <span class="font-mono text-[9px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-900 text-slate-500 border border-slate-200/50 dark:border-slate-800/50 font-medium">
+                  {item.status}
+                </span>
+              </div>
+
+              <h2 class="text-xs font-mono font-bold tracking-tight text-slate-800 dark:text-slate-200 mb-2 uppercase">
+                {item.title}
+              </h2>
+
+              <p class="text-[11px] font-mono leading-relaxed text-slate-400 dark:text-slate-500">
+                {item.desc}
+              </p>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-200/40 dark:border-slate-800/40 flex items-center justify-between">
+              <span class="text-[9px] font-mono text-slate-400 dark:text-slate-500">// MOCK_API_PORT: 3000</span>
+              <span class="text-[9px] font-mono text-slate-400 dark:text-slate-500">[REUSABLE_SCAFFOLD]</span>
+            </div>
+          </div>
+        )
+      })}
+    </div>
+
+    <!-- CARD LOWER SYSTEM LEGEND -->
+    <div class="mt-16 text-center max-w-md mx-auto">
+      <p class="text-[10px] font-mono text-slate-400 dark:text-slate-600 leading-normal">
+        [MOCK_PRODUCTS_NOTE: These component blocks are pre-structured visual scaffolding. Populate content and links manually as your service releases grow.]
+      </p>
+    </div>
+
+  </div>
+</Layout>

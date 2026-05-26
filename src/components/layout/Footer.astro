@@ -1,0 +1,60 @@
+---
+// Static footer with clean spacing and minimal visual weight
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-t border-slate-200/50 dark:border-slate-800/50 py-12 bg-slate-50/60 dark:bg-slate-950/40 text-slate-500 dark:text-slate-500 font-mono text-[11px] transition-colors duration-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 pb-12">
+      {/* COLUMN 1 */}
+      <div>
+        <h3 class="text-slate-800 dark:text-slate-400 font-medium mb-3 tracking-wider">STRUCTURES</h3>
+        <ul class="space-y-2">
+          <li><a href="/products" class="hover:text-slate-800 dark:hover:text-slate-200">◇ [PRODUCT_SCAFFOLD_A]</a></li>
+          <li><a href="/products" class="hover:text-slate-800 dark:hover:text-slate-200">◇ [PRODUCT_SCAFFOLD_B]</a></li>
+          <li><a href="/products" class="hover:text-slate-800 dark:hover:text-slate-200">◇ [PRODUCT_SCAFFOLD_C]</a></li>
+        </ul>
+      </div>
+
+      {/* COLUMN 2 */}
+      <div>
+        <h3 class="text-slate-800 dark:text-slate-400 font-medium mb-3 tracking-wider">DOCUMENTATIONS</h3>
+        <ul class="space-y-2">
+          <li><a href="/docs" class="hover:text-slate-800 dark:hover:text-slate-200">◇ [DOC_SECTION_ALPHA]</a></li>
+          <li><a href="/docs" class="hover:text-slate-800 dark:hover:text-slate-200">◇ [DOC_SECTION_BETA]</a></li>
+          <li><a href="/docs" class="hover:text-slate-800 dark:hover:text-slate-200">◇ [DOC_SECTION_GAMMA]</a></li>
+        </ul>
+      </div>
+
+      {/* COLUMN 3 */}
+      <div>
+        <h3 class="text-slate-800 dark:text-slate-400 font-medium mb-3 tracking-wider">UTILITIES</h3>
+        <ul class="space-y-2">
+          <li><a href="/pricing" class="hover:text-slate-800 dark:hover:text-slate-200">◇ [PRICING_ESTIMATE]</a></li>
+          <li><a href="/journey" class="hover:text-slate-800 dark:hover:text-slate-200">◇ [JOURNEY_TIMELINE]</a></li>
+          <li><a href="/faq" class="hover:text-slate-800 dark:hover:text-slate-200">◇ [FAQ_ACCORDION]</a></li>
+        </ul>
+      </div>
+
+      {/* COLUMN 4 */}
+      <div>
+        <h3 class="text-slate-800 dark:text-slate-400 font-medium mb-3 tracking-wider">LEGAL</h3>
+        <ul class="space-y-2">
+          <li><span class="block text-slate-400 dark:text-slate-600">◇ [LICENSE_HOLDER_INFO]</span></li>
+          <li><span class="block text-slate-400 dark:text-slate-600">◇ [PRIVACY_MOCK_CLAUSE]</span></li>
+          <li><span class="block text-slate-400 dark:text-slate-600">◇ [TERMS_MOCK_CLAUSE]</span></li>
+        </ul>
+      </div>
+    </div>
+
+    {/* LOWER BLOCK */}
+    <div class="border-t border-slate-200/40 dark:border-slate-800/40 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2 text-slate-400 dark:text-slate-600">
+        <span>[Astro Multi-Page Website Scaffold Template v1.0]</span>
+      </div>
+      <div class="text-slate-400 dark:text-slate-600">
+        <span>© {currentYear} [LOREM_IPSUM_ORGANIZATION]. ALL RIGHTS RESERVED.</span>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Accordion from '../components/ui/Accordion.tsx';
+
+// Structure documentation as clean, logical categories with placeholder data
+const firstCategoryDocs = [
+  {
+    id: "01_GETTING_START",
+    title: "Cara Mendapatkan dan Memulai",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    id: "02_INSTALLATION",
+    title: "Instalasi Fastapi & uvicorn",
+    content: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  }
+];
+
+const secondCategoryDocs = [
+  {
+    id: "03_CONFIGURATION_SYNTAX",
+    title: "[LOREM_MOCK_CONFIG_SCHEMA]",
+    content: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+  },
+  {
+    id: "04_TRANSFORM_ACTIONS",
+    title: "[LOREM_MOCK_UTILITY_PIPES]",
+    content: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio."
+  }
+];
+---
+
+<Layout title="Documentation" description="Lightweight documentation layout scaffold.">
+  <div class="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto flex-grow">
+    
+    <!-- DOCS PAGE HEADER TITLE -->
+    <div class="max-w-2xl mx-auto text-center mb-16">
+      <span class="text-[10px] font-mono tracking-widest text-slate-500 uppercase">DOCUMENTATION SYSTEM</span>
+      <h1 class="text-4xl md:text-5xl font-sans font-semibold tracking-tight text-slate-900 dark:text-slate-50 mt-3 mb-4">
+        DOKUMENTASI API
+      </h1>
+      <p class="text-slate-500 dark:text-slate-400 text-xs sm:text-sm leading-relaxed max-w-lg mx-auto">
+        [Dummy description: Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.]
+      </p>
+    </div>
+
+    {/* DOCS CONTENTS LAYOUT */}
+    <div class="space-y-12">
+      
+      {/* SECTION A: FIRST LEVEL */}
+      <div>
+        <div class="max-w-3xl mx-auto mb-5 border-b border-slate-200/40 dark:border-slate-800/40 pb-2">
+          <h2 class="text-xs font-mono font-semibold tracking-wider text-slate-700 dark:text-slate-300 uppercase">
+            Module Wajib
+          </h2>
+        </div>
+        <Accordion items={firstCategoryDocs} client:load />
+      </div>
+
+      {/* SECTION B: SECOND LEVEL */}
+      <div>
+        <div class="max-w-3xl mx-auto mb-5 border-b border-slate-200/40 dark:border-slate-800/40 pb-2">
+          <h2 class="text-xs font-mono font-semibold tracking-wider text-slate-700 dark:text-slate-300 uppercase">
+            Module tidak wajib
+          </h2>
+        </div>
+        <Accordion items={secondCategoryDocs} client:load />
+      </div>
+
+    </div>
+
+    <!-- DOCS ADDITIONAL INFO FOOTING -->
+    <div class="mt-16 text-center border-t border-slate-200/50 dark:border-slate-800/50 pt-10 max-w-xl mx-auto">
+      <p class="text-[10px] font-mono text-slate-400 dark:text-slate-500 max-w-md mx-auto leading-normal">
+        [MOCK_DOCS_GUIDELINE: Customize the entries inside `/src/pages/docs.astro` to expand document indexes and supply real operational directives.]
+      </p>
+    </div>
+
+  </div>
+</Layout>
