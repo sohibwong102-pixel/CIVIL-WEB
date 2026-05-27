@@ -57,7 +57,16 @@ const { title, description = "A simple, clean modular multi-page landing page sc
       html.dark .bg-slate-50 { background-color: #071027 !important; }
     </style>
   </head>
-  <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 flex flex-col min-h-screen antialiased transition-colors duration-200">
+  <body class={[
+      // SURFACE
+      'bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100',
+      // LAYOUT
+      'flex flex-col min-h-screen',
+      // TYPOGRAPHY
+      'antialiased',
+      // TRANSITION
+      'transition-colors duration-200'
+    ].join(' ')}>
     <!-- 🧭 NAVBAR: fixed di atas, ada logo + menu links + theme toggle -->
     <Navbar client:load />
 
