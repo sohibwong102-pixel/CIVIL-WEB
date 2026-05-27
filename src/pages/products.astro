@@ -1,7 +1,9 @@
 ---
+// 📦 PRODUCTS PAGE - showcase produk/module yang ditawarkan
 import Layout from '../layouts/Layout.astro';
 import { Package, Inbox, Layers, Settings, Eye, Globe } from 'lucide-react';
 
+// 🎯 Data: list produk dengan icon, status (coming soon / prototype)
 const productScaffolds = [
   {
     title: "[PRODUCT_MODULE_ACCELERATE]",
@@ -44,8 +46,8 @@ const productScaffolds = [
 
 <Layout title="Products Scaffold" description="Clean placeholder coming soon product cards list.">
   <div class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex-grow">
-    
-    <!-- HEADER -->
+
+    <!-- 📍 PAGE HEADER - judul + deskripsi halaman -->
     <div class="max-w-xl mx-auto text-center mb-16">
       <span class="text-[10px] font-mono tracking-widest text-slate-500 uppercase">[MODULES_PIPELINE]</span>
       <h1 class="text-2xl sm:text-3xl font-sans font-semibold tracking-tight text-slate-900 dark:text-slate-50 mt-3 mb-4">
@@ -56,23 +58,25 @@ const productScaffolds = [
       </p>
     </div>
 
-    <!-- MAIN CARDS LIST CONTAINER -->
+    <!-- 🎴 PRODUCT CARDS GRID - responsive layout: 1 col mobile, 2 col tablet, 3 col desktop -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
       {productScaffolds.map((item) => {
         const IconComponent = item.icon;
         return (
           <div class="flex flex-col justify-between p-6 rounded-xl border border-slate-200/60 dark:border-slate-800/60 bg-white/40 dark:bg-slate-950/25 backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5">
+            <!-- Card header: icon + status badge -->
             <div>
               <div class="flex items-center justify-between mb-4">
                 <span class="p-2 rounded border border-slate-200/50 dark:border-slate-800/50 bg-slate-50/50 dark:bg-slate-900/50 text-slate-700 dark:text-slate-300">
                   <IconComponent class="w-4 h-4" />
                 </span>
-                
+
                 <span class="font-mono text-[9px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-900 text-slate-500 border border-slate-200/50 dark:border-slate-800/50 font-medium">
                   {item.status}
                 </span>
               </div>
 
+              <!-- Card content: title + description -->
               <h2 class="text-xs font-mono font-bold tracking-tight text-slate-800 dark:text-slate-200 mb-2 uppercase">
                 {item.title}
               </h2>
@@ -82,6 +86,7 @@ const productScaffolds = [
               </p>
             </div>
 
+            <!-- Card footer: meta info (port, reusable tag) -->
             <div class="mt-6 pt-4 border-t border-slate-200/40 dark:border-slate-800/40 flex items-center justify-between">
               <span class="text-[9px] font-mono text-slate-400 dark:text-slate-500">// MOCK_API_PORT: 3000</span>
               <span class="text-[9px] font-mono text-slate-400 dark:text-slate-500">[REUSABLE_SCAFFOLD]</span>
@@ -91,7 +96,7 @@ const productScaffolds = [
       })}
     </div>
 
-    <!-- CARD LOWER SYSTEM LEGEND -->
+    <!-- 📝 FOOTER NOTE - explain ini mockup, perlu di-populate manually -->
     <div class="mt-16 text-center max-w-md mx-auto">
       <p class="text-[10px] font-mono text-slate-400 dark:text-slate-600 leading-normal">
         [MOCK_PRODUCTS_NOTE: These component blocks are pre-structured visual scaffolding. Populate content and links manually as your service releases grow.]

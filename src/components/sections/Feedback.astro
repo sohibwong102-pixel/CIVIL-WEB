@@ -1,10 +1,10 @@
 ---
-// Feedback section directly above the footer
+// 💬 FEEDBACK SECTION - user bisa submit feedback tanpa login
 ---
 
 <section class="py-16 px-4 sm:px-6 lg:px-8 border-t border-slate-200/50 dark:border-slate-800/50 bg-slate-50/20 dark:bg-slate-950/20 transition-colors duration-200">
   <div class="max-w-xl mx-auto text-center">
-    <!-- SUB-HEADER AND HEADING -->
+    <!-- Section label + heading -->
     <div class="text-[12px] font-mono tracking-widest text-slate-500 dark:text-slate-500 mb-2 uppercase">
       FEEDBACK
     </div>
@@ -16,38 +16,41 @@
       kami hanya butuh feedback anda untuk peningkatan website kami.
     </p>
 
-    <!-- FEEDBACK FORM -->
-    <!-- Connect backend endpoint here -->
+    <!-- 📝 FEEDBACK FORM -->
+    <!-- TODO: connect ke backend endpoint untuk save feedback ke database -->
     <form id="scaffold-feedback-form" class="text-left space-y-4 font-mono text-xs">
+      <!-- Email input: optional field -->
       <div>
         <label for="feedback-email" class="block text-slate-600 dark:text-slate-400 mb-1.5 font-medium">Email (optional)</label>
-        <input 
-          type="email" 
-          id="feedback-email" 
-          placeholder="....@gmail.com" 
-          
+        <input
+          type="email"
+          id="feedback-email"
+          placeholder="....@gmail.com"
+
           class="w-full px-3 py-2 border border-slate-200 dark:border-slate-800 rounded-md bg-slate-50/60 dark:bg-slate-900/60 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-slate-400 dark:focus:ring-slate-600 transition-all font-mono text-sm"
         />
       </div>
 
+      <!-- Textarea: main feedback content -->
       <div>
         <label for="feedback-textarea" class="block text-slate-600 dark:text-slate-400 mb-1.5 font-medium">Feedback Area</label>
-        <textarea 
-          id="feedback-textarea" 
-          rows="4" 
-          placeholder="Sepertinya endpoint kurang responsif..." 
-          required 
+        <textarea
+          id="feedback-textarea"
+          rows="4"
+          placeholder="Sepertinya endpoint kurang responsif..."
+          required
           class="w-full px-3 py-2 border border-slate-200 dark:border-slate-800 rounded-md bg-slate-50/60 dark:bg-slate-900/60 text-slate-900 dark:text-slate-100 placeholder-slate-300 dark:placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-slate-400 dark:focus:ring-slate-600 transition-all font-mono text-sm resize-none"
         ></textarea>
       </div>
 
-      <button 
-        type="submit" 
+      <!-- Submit button -->
+      <button
+        type="submit"
         class="w-full px-4 py-3 text-xs tracking-wider bg-slate-950 dark:bg-slate-300 text-slate-50 dark:text-slate-900 rounded-md font-medium hover:bg-slate-800 dark:hover:bg-slate-800 dark:hover:text-slate-100 transition-colors cursor-pointer text-center"
       >
         Kirim Feedback
 
-      {/* SUCCESS BANNER AREA */}
+      <!-- ✅ Success message: tampil setelah form submit -->
       <div id="scaffold-feedback-success" class="hidden p-3 border border-slate-200 dark:border-slate-800/80 bg-slate-100/50 dark:bg-slate-900/50 text-slate-600 dark:text-slate-400 text-center rounded-md font-sans text-xs">
         Terima kasih telah memberikan feedback<br>
         kami akan berusaha memeperbaikinya
@@ -56,7 +59,7 @@
   </div>
 </section>
 
-<!-- LIGHT CLIENT-SIDE LOGIC TO SHOWCASE SUCCESS BEHAVIOR -->
+<!-- ⚡ CLIENT-SIDE SCRIPT: handle form submit dan show success message -->
 <script is:inline>
   const form = document.getElementById('scaffold-feedback-form');
   const successMessage = document.getElementById('scaffold-feedback-success');
@@ -64,7 +67,7 @@
   if (form && successMessage) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      // Hide inputs gracefully and show visual placeholder receipt
+      // Hide form gracefully dan show visual receipt
       successMessage.classList.remove('hidden');
       form.querySelector('button[type="submit"]').disabled = true;
       form.querySelector('button[type="submit"]').textContent = "[SUBMITTED]";

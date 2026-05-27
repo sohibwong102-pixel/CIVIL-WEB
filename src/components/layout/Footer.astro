@@ -1,12 +1,13 @@
 ---
-// Static footer with clean spacing and minimal visual weight
+// 🔚 FOOTER COMPONENT - links ke berbagai section + copyright
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class="border-t border-slate-200/50 dark:border-slate-800/50 py-12 bg-slate-50/60 dark:bg-slate-950/40 text-slate-500 dark:text-slate-500 font-mono text-[11px] transition-colors duration-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- 📊 FOOTER GRID: 4 columns, 2 columns di mobile -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 pb-12">
-      {/* COLUMN 1 */}
+      <!-- Column 1: Produk/struktur yang ditawarkan -->
       <div>
         <h3 class="text-slate-800 dark:text-slate-400 font-medium mb-3 tracking-wider">STRUCTURES</h3>
         <ul class="space-y-2">
@@ -16,7 +17,7 @@ const currentYear = new Date().getFullYear();
         </ul>
       </div>
 
-      {/* COLUMN 2 */}
+      <!-- Column 2: Dokumentasi -->
       <div>
         <h3 class="text-slate-800 dark:text-slate-400 font-medium mb-3 tracking-wider">DOCUMENTATIONS</h3>
         <ul class="space-y-2">
@@ -26,7 +27,7 @@ const currentYear = new Date().getFullYear();
         </ul>
       </div>
 
-      {/* COLUMN 3 */}
+      <!-- Column 3: Utility links seperti pricing, journey, FAQ -->
       <div>
         <h3 class="text-slate-800 dark:text-slate-400 font-medium mb-3 tracking-wider">UTILITIES</h3>
         <ul class="space-y-2">
@@ -36,7 +37,7 @@ const currentYear = new Date().getFullYear();
         </ul>
       </div>
 
-      {/* COLUMN 4 */}
+      <!-- Column 4: Legal links -->
       <div>
         <h3 class="text-slate-800 dark:text-slate-400 font-medium mb-3 tracking-wider">LEGAL</h3>
         <ul class="space-y-2">
@@ -47,7 +48,7 @@ const currentYear = new Date().getFullYear();
       </div>
     </div>
 
-    {/* LOWER BLOCK */}
+    <!-- 📜 FOOTER BOTTOM: copyright + template info -->
     <div class="border-t border-slate-200/40 dark:border-slate-800/40 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-2 text-slate-400 dark:text-slate-600">
         <span>[Astro Multi-Page Website Scaffold Template v1.0]</span>

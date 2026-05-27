@@ -1,8 +1,10 @@
 ---
+// 🎨 MAIN LAYOUT TEMPLATE - setiap page di-wrap dengan layout ini
 import Navbar from '../components/navigation/Navbar.tsx';
 import Footer from '../components/layout/Footer.astro';
 import '../styles/global.css';
 
+// Props: title = judul halaman, description = meta description buat SEO
 interface Props {
   title: string;
   description?: string;
@@ -21,7 +23,8 @@ const { title, description = "A simple, clean modular multi-page landing page sc
     <title>{title} | CIVIL-Web</title>
     <meta name="description" content={description} />
     
-    <!-- LIGHT/DARK THEME INITIALIZATION (to prevent page flash) -->
+    <!-- ⚡ DARK MODE: setup tema sebelum page render (avoid flash) -->
+    <!-- Logika: ambil dari localStorage, kalau nggak ada pakai system preference -->
     <script is:inline>
       const getThemePreference = () => {
         if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
@@ -29,15 +32,15 @@ const { title, description = "A simple, clean modular multi-page landing page sc
         }
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       };
-      
+
       const theme = getThemePreference();
       if (theme === 'dark') {
         document.documentElement.classList.add('dark');
       } else {
         document.documentElement.classList.remove('dark');
       }
-      
-      // Keep state in sync with localStorage change
+
+      // Sync localStorage ketika user ubah theme via button
       if (typeof localStorage !== 'undefined') {
         const observer = new MutationObserver(() => {
           const isDark = document.documentElement.classList.contains('dark');
@@ -46,7 +49,7 @@ const { title, description = "A simple, clean modular multi-page landing page sc
         observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
       }
     </script>
-    <!-- Quick CSS overrides so `html.dark` visibly applies while Tailwind config is settled -->
+    <!-- Fast CSS override agar dark mode langsung terlihat (Tailwind CSS akan override ini nanti) -->
     <style is:inline>
       html.dark body { background-color: #0f1724 !important; color: #e6eef3 !important; }
       html.dark header { background-color: rgba(7,9,12,0.95) !important; border-color: rgba(148,163,184,0.08) !important; }
@@ -55,15 +58,15 @@ const { title, description = "A simple, clean modular multi-page landing page sc
     </style>
   </head>
   <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 flex flex-col min-h-screen antialiased transition-colors duration-200">
-    <!-- LAYOUT COVER NAVIGATION -->
+    <!-- 🧭 NAVBAR: fixed di atas, ada logo + menu links + theme toggle -->
     <Navbar client:load />
 
-    <!-- MAIN PAGE CONTAINER -->
+    <!-- 📄 PAGE CONTENT: section utama yang berisi konten per halaman -->
     <main class="flex-grow flex flex-col pt-16">
       <slot />
     </main>
 
-    <!-- LAYOUT COVER FOOTER -->
+    <!-- 🔚 FOOTER: di bawah semua page, biasanya copyright + links -->
     <Footer />
   </body>
 </html>

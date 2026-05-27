@@ -1,43 +1,46 @@
+/* 📦 IMPORT FONTS & TAILWIND */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
 @import "tailwindcss";
 
+/* 🎨 ROOT VARIABLES - typography fonts yang dipake di seluruh project */
 :root {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
-/* Custom scroll behaviors and calm transitions */
+/* 📜 HTML & BODY DEFAULTS - basic setup untuk page */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* smooth scroll saat klik anchor link */
   height: 100%;
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-sans); /* pake Inter font default */
+  /* smooth transition saat ganti dark mode */
   transition:
     background-color 0.2s ease,
     color 0.2s ease;
   min-height: 100%;
 }
 
-/* Smooth custom scrollbars for calm operational feel */
+/* 🎯 CUSTOM SCROLLBAR - buat scrollbar lebih minimalis & elegant */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: transparent; /* background scrollbar invisible */
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(100, 116, 139, 0.15);
+  background: rgba(100, 116, 139, 0.15); /* warna thumb scrollbar subtle */
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(100, 116, 139, 0.3);
+  background: rgba(100, 116, 139, 0.3); /* lebih jelas saat hover */
 }
 
-/* Class helper for glassmorphism */
+/* 🔮 GLASSMORPHISM HELPER - utility class buat blur effect background */
 .glass-panel {
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* webkit fallback buat browser lama */
 }

@@ -1,9 +1,11 @@
 ---
+// 🏠 HOME PAGE - landing page utama
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/sections/Hero.astro';
 import Feedback from '../components/sections/Feedback.astro';
 import { Layers, Terminal, Smartphone } from 'lucide-react';
 
+// 🎯 Data: list fitur CIVIL yang ditampilkan di bagian features
 const featureCivil = [
   {
     title: "Modular Ecosystem",
@@ -27,22 +29,23 @@ const featureCivil = [
 ---
 
 <Layout title="Home" description="An elegant modular multi-page landing page scaffold constructed with Astro and Tailwind CSS.">
-  <!-- HERO HEAD BLOCK -->
+  <!-- 🎬 SECTION 1: Hero - judul besar + call-to-action utama -->
   <Hero />
 
-  <!-- MAIN SUB-GRID CARD GROUP (using spacing over excessive colors) -->
+  <!-- ✨ SECTION 2: Features showcase - 3 card dengan icon dari featureCivil array -->
   <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <!-- Header bagian -->
     <div class="text-center max-w-2xl mx-auto mb-16">
       <span class="text-[11px] font-mono tracking-widest text-slate-500 uppercase">Core Struktur</span>
       <h2 class="text-3xl md:text-5xl font-sans font-semibold tracking-tight text-slate-900 dark:text-slate-50 mt-2 mb-4">
-        Highlight LumaSite 
+        Highlight LumaSite
       </h2>
       <p class="text-slate-500 dark:text-slate-400 text-xss leading-relaxed max-w-lg mx-auto">
         Kami selalu mengedepankan kenyamanan, terutama bagi beginner yang baru belajar API
       </p>
     </div>
 
-    {/* RESPONSIVE FEATURE LAYOUTS */}
+    <!-- Grid layout: 1 column mobile, 3 columns desktop - card untuk setiap fitur -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {featureCivil.map((feat) => {
         const Icon = feat.icon;
@@ -62,6 +65,6 @@ const featureCivil = [
     </div>
   </section>
 
-  <!-- FEEDBACK SUBMIT BLOCK -->
+  <!-- 💬 SECTION 3: Feedback form - user bisa submit feedback -->
   <Feedback />
 </Layout>
