@@ -3,10 +3,29 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="border-t border-slate-200/50 dark:border-slate-800/50 py-12 bg-slate-50/60 dark:bg-slate-950/40 text-slate-500 dark:text-slate-500 font-mono text-[11px] transition-colors duration-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<footer class={[
+      // SURFACE
+      'border-t border-slate-200/50 dark:border-slate-800/50 bg-slate-50/60 dark:bg-slate-950/40 text-slate-500 dark:text-slate-500',
+      // SPACING
+      'py-12',
+      // TYPOGRAPHY
+      'font-mono text-[11px]',
+      // TRANSITION
+      'transition-colors duration-200'
+    ].join(' ')}>
+  <div class={[
+      // LAYOUT
+      'max-w-7xl mx-auto',
+      // SPACING
+      'px-4 sm:px-6 lg:px-8'
+    ].join(' ')}>
     <!-- 📊 FOOTER GRID: 4 columns, 2 columns di mobile -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 pb-12">
+    <div class={[
+      // LAYOUT
+      'grid grid-cols-2 md:grid-cols-4',
+      // SPACING
+      'gap-8 pb-12'
+    ].join(' ')}>
       <!-- Column 1: Produk/struktur yang ditawarkan -->
       <div>
         <h3 class="text-slate-800 dark:text-slate-400 font-medium mb-3 tracking-wider">STRUCTURES</h3>
@@ -49,8 +68,20 @@ const currentYear = new Date().getFullYear();
     </div>
 
     <!-- 📜 FOOTER BOTTOM: copyright + template info -->
-    <div class="border-t border-slate-200/40 dark:border-slate-800/40 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2 text-slate-400 dark:text-slate-600">
+    <div class={[
+      // SURFACE
+      'border-t border-slate-200/40 dark:border-slate-800/40',
+      // SPACING
+      'pt-6 gap-4',
+      // LAYOUT
+      'flex flex-col sm:flex-row items-center justify-between'
+    ].join(' ')}>
+      <div class={[
+        // LAYOUT
+        'flex items-center gap-2',
+        // TYPOGRAPHY
+        'text-slate-400 dark:text-slate-600'
+      ].join(' ')}>
         <span>[Astro Multi-Page Website Scaffold Template v1.0]</span>
       </div>
       <div class="text-slate-400 dark:text-slate-600">
