@@ -69,7 +69,7 @@ export default function Navbar() {
               title="Toggle Theme"
               aria-label="Toggle Theme"
             >
-              {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              {isDark ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
             </button>
 
             {/* PRIMARY CTA LINK */}
@@ -89,7 +89,7 @@ export default function Navbar() {
               className="p-2 border border-slate-200/60 dark:border-slate-800/60 rounded-lg text-slate-600 dark:text-slate-400 cursor-pointer"
               aria-label="Toggle Theme"
             >
-              {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              {isDark ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
             </button>
 
             {/* HAMBURGER TOGGLE */}
