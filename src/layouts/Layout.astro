@@ -49,14 +49,7 @@ const { title, description = "A simple, clean modular multi-page landing page sc
         observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
       }
     </script>
-    <!-- Fast CSS override agar dark mode langsung terlihat (Tailwind CSS akan override ini nanti) -->
-    <style is:inline>
-      html.dark body { background-color: #0f1724 !important; color: #e6eef3 !important; }
-      html.dark header { background-color: rgba(7,9,12,0.95) !important; border-color: rgba(148,163,184,0.08) !important; }
-      html.dark .text-slate-900 { color: #e6eef3 !important; }
-      html.dark .bg-slate-50 { background-color: #071027 !important; }
-    </style>
-  </head>
+ </head>
   <body class={[
       // SURFACE
       'bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100',
