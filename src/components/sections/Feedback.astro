@@ -12,8 +12,8 @@
       Ada Keluhan Tentang Web kami?
     </h2>
     <p class="text-slate-500 dark:text-slate-400 text-xs md:text-xl mb-8 leading-relaxed max-w-sm mx-auto">
-      Silahkan berikan feedback anda, tanpa login,
-      kami hanya butuh feedback anda untuk peningkatan website kami.
+      Silahkan berikan feedback anda, 
+      kami butuh feedback anda untuk peningkatan website kami.
     </p>
 
     <!-- 📝 FEEDBACK FORM -->
@@ -53,7 +53,7 @@
       <!-- ✅ Success message: tampil setelah form submit -->
       <div id="scaffold-feedback-success" class="hidden p-3 border border-slate-200 dark:border-slate-800/80 bg-slate-100/50 dark:bg-slate-900/50 text-slate-600 dark:text-slate-400 text-center rounded-md font-sans text-xs">
         Terima kasih telah memberikan feedback<br>
-        kami akan berusaha memeperbaikinya
+        kami akan terus berusaha meningkatkannya
       </div>
     </form>
   </div>
@@ -70,7 +70,7 @@
       // Hide form gracefully dan show visual receipt
       successMessage.classList.remove('hidden');
       form.querySelector('button[type="submit"]').disabled = true;
-      form.querySelector('button[type="submit"]').textContent = "[SUBMITTED]";
+      form.querySelector('button[type="submit"]').textContent = "Terima kasih";
     });
   }
 </script>
